@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "mobile-store",
-    "description": "This project is really great.",
+    "description": "La boutique marocaine Halpies.",
     "slug": "mobile-store",
     "privacy": "public",
     "sdkVersion": "30.0.0",

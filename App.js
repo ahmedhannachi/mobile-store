@@ -1,56 +1,57 @@
 import React from 'react';
 import {Text} from 'react-native-elements'
 import {StyleSheet, View, Image, ImageBackground} from 'react-native';
-import StepIndicator from 'react-native-step-indicator';
+import Swiper from 'react-native-swiper';
 
-
-const customStyles = {
-    stepIndicatorSize: 25,
-    currentStepIndicatorSize: 30,
-    separatorStrokeWidth: 2,
-    currentStepStrokeWidth: 3,
-    stepStrokeCurrentColor: '#de486b',
-    stepStrokeWidth: 3,
-    stepStrokeFinishedColor: '#de486b',
-    stepStrokeUnFinishedColor: '#aaaaaa',
-    separatorFinishedColor: '#de486b',
-    separatorUnFinishedColor: '#aaaaaa',
-    stepIndicatorFinishedColor: '#de486b',
-    stepIndicatorUnFinishedColor: '#ffffff',
-    stepIndicatorCurrentColor: '#ffffff',
-    stepIndicatorLabelFontSize: 13,
-    currentStepIndicatorLabelFontSize: 13,
-    stepIndicatorLabelCurrentColor: '#de486b',
-    stepIndicatorLabelFinishedColor: '#ffffff',
-    stepIndicatorLabelUnFinishedColor: '#aaaaaa',
-    labelColor: '#999999',
-    labelSize: 13,
-    currentStepLabelColor: '#de486b'
-}
 
 export default class App extends React.Component {
     render() {
         return (
-            <ImageBackground source={require('./assets/walkthrough/bg4.jpg')} style={{width: '100%', height: '100%'}}>
+            <Swiper style={styles.wrapper} loop={false} dotStyle={{backgroundColor: "#838383"}} activeDotColor={"#de486b"}>
+                <View style={styles.slide1}>
+                    <View style={styles.container}>
+                        <View style={{flex: 1, alignItems: 'center', justifyContent: 'space-between'}}>
+                            <Text h1 style={{color: '#000'}}>Visualisez</Text>
 
-                <View style={styles.container}>
-                    <View style={{flex: 1, alignItems: 'center', justifyContent: 'space-between'}}>
-                        <Text h1 style={{color: '#fff'}}>Qualité</Text>
+                            <Text style={{fontWeight: '900', color: '#000'}}>
+                                Visualisez nos produits et nos deals!
+                            </Text>
+                        </View>
+                        <View style={{flex: 5, justifyContent: 'center', alignItems: 'center'}}>
 
-                        <Text style={{fontWeight: '900', color:'#fff'}}>
-                            Nous offrons des deals exceptionnels pour des produits de premiére qualité
-                        </Text>
+                        </View>
                     </View>
-                    <View style={{flex: 5, justifyContent: 'center', alignItems: 'center'}}>
-
-                    </View>
-                    <StepIndicator
-                        stepCount={4}
-                        customStyles={customStyles}
-                        currentPosition={1}
-                    />
                 </View>
-            </ImageBackground>
+                <View style={styles.slide2}>
+                    <View style={styles.container}>
+                        <View style={{flex: 1, alignItems: 'center', justifyContent: 'space-between'}}>
+                            <Text h1 style={{color: '#000'}}>Choisissez</Text>
+
+                            <Text style={{fontWeight: '900', color: '#000'}}>
+                                Choisissez le produit qui  vous convient, et nous alons vous appeler pour fixer un rendez-vous!
+                            </Text>
+                        </View>
+                        <View style={{flex: 5, justifyContent: 'center', alignItems: 'center'}}>
+
+                        </View>
+                    </View>
+                </View>
+                <View style={styles.slide3}>
+
+                    <View style={styles.container}>
+                        <View style={{flex: 1, alignItems: 'center', justifyContent: 'space-between'}}>
+                            <Text h1 style={{color: '#000'}}>Profitez</Text>
+
+                            <Text style={{fontWeight: '900', color: '#000'}}>
+                                Nous vous livrons votre produit, et payer seulement quand vous êtes satisfait!
+                            </Text>
+                        </View>
+                        <View style={{flex: 5, justifyContent: 'center', alignItems: 'center'}}>
+
+                        </View>
+                    </View>
+                </View>
+            </Swiper>
         );
     }
 }
@@ -61,4 +62,28 @@ const styles = StyleSheet.create({
         paddingTop: '10%',
         justifyContent: 'space-between'
     },
+    wrapper: {},
+    slide1: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#fff',
+    },
+    slide2: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#fff',
+    },
+    slide3: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#fff',
+    },
+    text: {
+        color: '#fff',
+        fontSize: 30,
+        fontWeight: 'bold',
+    }
 });
